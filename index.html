@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#E7EEFF">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>PLAYMODE Prototype</title>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="page-bg" id="pageBg"></div>
+
+<header class="topbar">
+  <div>
+    <div id="topLogo"></div>
+    <div class="tagline">Play together. Feel closer.</div>
+  </div>
+  <div class="chips" id="topChips"></div>
+</header>
+
+<main class="stage">
+  <div class="phone-col">
+    <div class="role-badge" id="roleBadge"></div>
+    <div class="phone-scale" id="phoneScale">
+      <div class="phone" id="phone">
+        <div class="screen-wrap" id="screenWrap">
+          <div id="bokeh"></div>
+          <div class="statusbar" id="statusbar"><span>9:41</span><span style="display:flex;gap:6px;align-items:center">
+            <svg viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2.5" width="3" height="9.5" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+            <svg viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1.5 4.2a10 10 0 0 1 13 0M4 7a6 6 0 0 1 8 0"/><circle cx="8" cy="10" r="1.2" fill="currentColor" stroke="none"/></svg>
+            <svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="22" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".45"/><rect x="2.5" y="2.5" width="17" height="7" rx="2" fill="currentColor"/><rect x="24" y="4" width="2" height="4" rx="1" fill="currentColor" opacity=".45"/></svg></span></div>
+          <div class="island"></div>
+          <div id="app"></div>
+          <div class="homebar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="tv-col">
+    <div style="position:relative;margin-top:26px">
+      <div class="tv-label"><svg class="ic" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zM8 21h8M12 18v3"/></svg>Living Room TV — shared screen</div>
+      <div class="tv-frame" id="tvFrame">
+        <div class="tv-screen" id="tvScreen">
+          <div class="tv-photo" id="tvPhoto"></div>
+          <div class="beams"></div>
+          <div class="tv-veil"></div>
+          <div class="notes" id="notes"></div>
+          <div id="tvc" class="tv-content-layer"></div>
+          <div id="tvIntro"></div>
+          <canvas id="confetti"></canvas>
+          <button class="snd" id="soundBtn" aria-label="Mute TV sound"></button>
+        </div>
+      </div>
+      <div class="tv-stand"></div>
+    </div>
+
+    <div class="panel">
+      <div class="pcard glass">
+        <h4><span id="taskIc"></span>Usability test task</h4>
+        <p>“Imagine you are at home with friends. Create a PLAYMODE room, connect the TV, find a game that suits the whole group, and complete the first round.”</p>
+        <div class="now">Now showing: <b id="nowLabel">01 Home</b></div>
+        <div class="heur" id="heur"></div>
+      </div>
+      <div class="pcard glass">
+        <h4><span id="ctrlIc"></span>Prototype controls (facilitator)</h4>
+        <select id="jump" aria-label="Jump to a state"></select>
+        <div class="pbtns">
+          <button class="pbtn" id="btnDiscon"></button>
+          <button class="pbtn" id="btnReset" hidden></button>
+        </div>
+        <div class="fac-btns" id="facBtns"></div>
+        <p class="small" style="margin-top:10px;line-height:1.45">Room code (TV and “Join a Room”): <b id="facCode"></b>. Sophie, Liam, Jess and Alex are simulated unless they have their own tab. Audio is an original placeholder tune.</p>
+      </div>
+      <div class="pcard glass">
+        <h4><span id="tabsIc"></span>Multi-tab demo</h4>
+        <p class="small" style="line-height:1.45">This page is Emma (host) + TV. Open players or a TV-only screen in new tabs on this computer — they stay in sync.</p>
+        <div class="pbtns" id="tabLinks"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="config.js"></script>
+<script src="js/vendor/qrcode.js"></script>
+<script src="js/live.js"></script>
+<script src="js/assets.js"></script>
+<script src="js/theme-assets.js"></script>
+<script src="js/themes.js"></script>
+<script src="js/catalogue.js"></script>
+<script src="js/recommend.js"></script>
+<script src="js/store.js"></script>
+<script src="js/sync.js"></script>
+<script src="js/firstnotes.js"></script>
+<script src="js/phone.js"></script>
+<script src="js/tv.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
