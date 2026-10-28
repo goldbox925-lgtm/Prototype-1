@@ -12,7 +12,7 @@ One shared **TV screen** (instructions, questions, timer, progress, results) and
 | When | Supabase not configured, or `?demo` in the URL | `config.js` (or the in-app setup) holds a Supabase URL + publishable key |
 | Devices | Tabs in **one browser** on one computer | **Any devices on any network** (computer/TV + phones) |
 | Transport | BroadcastChannel + localStorage | Supabase Realtime Broadcast |
-| Room code | `7316` | A fresh 4-digit code made by the TV, e.g. `4821` |
+| Room code | `7316` | A fresh 4-digit code made by the TV (not the demo code `7316`) |
 | Label | "Demo mode · this browser only" on the TV, phone and launcher | "Live" + connection status on the TV |
 
 Demo mode needs no network at all, so you can always click through the TV and phone screens locally.

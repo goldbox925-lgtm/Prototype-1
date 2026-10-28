@@ -1465,8 +1465,8 @@ body.native{position:fixed;inset:0;width:100%}
    NEVER put a secret key (sb_secret_…) or the service_role key here — this file is downloaded by every browser.
    The app refuses those keys. See README.md → "Live multi-device play". */
 window.PLAYMODE_CONFIG = {
-  supabaseUrl: '',
-  supabasePublishableKey: ''
+  supabaseUrl: 'https://jqynodrszdyqbjbofwpw.supabase.co',
+  supabasePublishableKey: 'sb_publishable_b1e9Njw6_Ugebay1ar2o0A_FnAkstyO'
 };
 
 </script>
@@ -3029,7 +3029,7 @@ gdetails: () => detailsScreen(UI.detail, null, true),
 join: () => {
   const c = UI.code, full = c.length === 4, busy = UI.probing;
   const err = {bad:['That code doesn’t look right', 'Check the 4-digit code shown on the TV and try again.'],
-    missing:[`No room ${c} is open`, 'Check the code on the TV. The TV screen must stay open to keep the room running.'],
+    missing:[`Live room ${c} wasn’t found`, 'Enter the current 4-digit code shown on the TV. Live codes change when a room is created; 7316 is for Demo mode only. Scan the TV QR to join automatically.'],
     offline:['Can’t reach the live service', 'Check your internet connection and try again.'],
     notv:['That room isn’t open yet', 'Open the TV screen first (?role=tv) — it creates the room and shows the code.']}[UI.codeErr];
   return `<div class="scr ${UI.controller ? 'no-nav' : 'nav-on'}">
@@ -3037,7 +3037,7 @@ join: () => {
   <div class="body">
     ${UI.controller ? `<div class="ctl-brand">${LOGO('30px')}</div>` : ''}
     <div class="big-ic" style="background:radial-gradient(circle at 35% 30%,#fff,#E6DEFF 72%);color:var(--violet);box-shadow:0 0 0 10px rgba(117,91,255,.08)">${I('keypad')}</div>
-    <h1>Join a room</h1><div class="sub">Use the code or the QR code on the TV.</div>
+    <h1>Join a room</h1><div class="sub">${LIVE ? 'Enter the current code shown on the TV, or scan its QR. The demo code 7316 won’t work in Live mode.' : 'Use the code or the QR code on the TV.'}</div>
     <div class="join-m"><span class="jm-n">1</span>Enter room code</div>
     <div class="code-boxes ${UI.codeErr ? 'shake' : ''}" id="codeBoxes">${[0, 1, 2, 3].map(i => `<input class="cb glass ${UI.codeErr ? 'bad' : full ? 'ok' : i === c.length ? 'cur' : ''}" id="cb${i}" data-i="${i}" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="${i ? 'off' : 'one-time-code'}" aria-label="Room code digit ${i + 1}" value="${c[i] || ''}" ${busy ? 'disabled' : ''}>`).join('')}</div>
     ${err ? `<div class="err-card glassin">${I('x', '', 'color:var(--err);width:22px;height:22px;flex:none')}<div><b>${err[0]}</b><span>${err[1]}</span></div></div>`

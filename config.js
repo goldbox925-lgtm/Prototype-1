@@ -7,6 +7,6 @@
    NEVER put a secret key (sb_secret_…) or the service_role key here — this file is downloaded by every browser.
    The app refuses those keys. See README.md → "Live multi-device play". */
 window.PLAYMODE_CONFIG = {
-  supabaseUrl: '',
-  supabasePublishableKey: ''
+  supabaseUrl: 'https://jqynodrszdyqbjbofwpw.supabase.co',
+  supabasePublishableKey: 'sb_publishable_b1e9Njw6_Ugebay1ar2o0A_FnAkstyO'
 };
